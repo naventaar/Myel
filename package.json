@@ -1,0 +1,30 @@
+{
+  "name": "myel",
+  "version": "1.0.0",
+  "description": "Exam #3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naventaar/Myel.git"
+  },
+  "author": "Skyba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naventaar/Myel/issues"
+  },
+  "homepage": "https://github.com/naventaar/Myel#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.43.4"
+  }
+}
