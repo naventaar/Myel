@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -9,23 +13,66 @@ body {
 .header {
     height: 88px;
 }
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    background-color: transparent;
+    background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
+        background-repeat: no-repeat;
+        background-position: 100% 0;
+        background-size: 0 calc(100% - 1px);
+        transition: background-size .55s cubic-bezier(.645,.045,.355,1);
+    &:hover {
+        background-size: 100% calc(100% - 1px);
+        background-position: 0 0;
+    }
+}
 .nav {
     &_top {
+        text-transform: uppercase;
+        padding: 25px 30px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+    .menu {
+        width: calc(50% - 70px);
+        display: flex;
+        align-items: center;
+        gap: 40%;
+        &_left {
+            justify-content: flex-start;
+        }
+        &_right {
+            justify-content: flex-end;
+        }
+        &_small {
+            .menu__item {
+                margin: 0 25px;
+            }
+        }
     }
 }
 .logo {
    justify-self: center;
 }
-.language-switcher__lang {
-	text-decoration: none
-}
-
-.language-switcher__lang:not(.active) {
-	color: #c4c4c4
-}
-
-.language-switcher__lang.active {
-	pointer-events: none
+.language-switcher {
+    display: flex;
+    gap: 5px;
+    &__divider {
+        width: 2px;
+        background-color: #000;
+    }
+    &__lang {        
+        text-decoration: none;
+        &:not(.active) {
+            color: #c4c4c4;
+        }
+    }
+    &__lang.active {
+        pointer-events: none
+    }
 }
