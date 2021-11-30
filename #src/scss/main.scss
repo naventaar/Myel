@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "slick", "slick-theme";
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ html {
 }
 body {
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 .header {
     height: 88px;
@@ -16,9 +19,8 @@ body {
 li {
     list-style-type: none;
 }
-a {
+.link_underline {
     text-decoration: none;
-    color: #000;
     background-color: transparent;
     background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
         background-repeat: no-repeat;
@@ -29,6 +31,12 @@ a {
         background-size: 100% calc(100% - 1px);
         background-position: 0 0;
     }
+}
+.text_black {
+    color: #000;
+}
+.text_white {
+    color: #fff;
 }
 .nav {
     &_top {
@@ -48,12 +56,19 @@ a {
         }
         &_right {
             justify-content: flex-end;
+            gap: 35%;
         }
-        &_small {
+        &_login {
+            width: auto;
+            gap: 10px;
             .menu__item {
                 margin: 0 25px;
+                font: 14px;
             }
         }
+    }
+    .cart-counter {
+        margin-left: 5vw;
     }
 }
 .logo {
@@ -75,4 +90,60 @@ a {
     &__lang.active {
         pointer-events: none
     }
+}
+.main__title {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 400;
+}
+.section_entrance {
+    width: 100%;
+    display: flex;
+    .image_holder {
+        width: 33.33%;
+        position: relative;
+        img {
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .link_underline {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            text-transform: uppercase;
+            font-size: 18px;
+            color: #fff;
+        }
+        .link_underline.text_black {
+            bottom: 105px;
+            left: calc(100% - 165px);
+            color: black;
+        }
+    }
+}
+.section_responsible {
+   width: 100%;
+   padding: 130px 65px;
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   .block {
+       display: flex;
+       flex-direction: column;
+       flex-basis: 60%;
+       gap: 30px;
+       .description {
+           font-size: 20px;
+           line-height: 1.25;
+       }
+   }
+   .link_underline {
+       text-align: right;
+   }
+}
+.section_new-arrivals {
+    width: 100%;
+   padding: 130px 65px;
 }
