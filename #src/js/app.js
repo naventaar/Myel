@@ -1,5 +1,7 @@
 $('.new-arrivals__slider').slick({
     dots: true,
+    arrows: true,
+    appendArrows: '.new-arrivals__arrows',
     infinite: false,
     speed: 300,
     slidesToShow: 3,

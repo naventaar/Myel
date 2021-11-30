@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import "slick", "slick-theme";
+@import "mixins", "slick", "components";
 
 * {
     margin: 0;
@@ -12,6 +12,7 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    background: #F1F1F1;
 }
 .header {
     height: 88px;
@@ -20,17 +21,7 @@ li {
     list-style-type: none;
 }
 .link_underline {
-    text-decoration: none;
-    background-color: transparent;
-    background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
-        background-repeat: no-repeat;
-        background-position: 100% 0;
-        background-size: 0 calc(100% - 1px);
-        transition: background-size .55s cubic-bezier(.645,.045,.355,1);
-    &:hover {
-        background-size: 100% calc(100% - 1px);
-        background-position: 0 0;
-    }
+    @include hoverUnderline;
 }
 .text_black {
     color: #000;
@@ -143,7 +134,64 @@ li {
        text-align: right;
    }
 }
+.arrow-icon {
+    fill: #000;
+    width: 18px;
+    height: 10px;
+}
 .section_new-arrivals {
-    width: 100%;
+   width: 100%;
    padding: 130px 65px;
+   a {
+       text-decoration: none;
+   }
+   .new-arrivals {
+       &__header {
+         display: flex;
+         justify-content: space-between;
+         margin-bottom: 30px;
+       }
+       &__title {
+           text-transform: uppercase;
+           font-size: 24px;
+       }
+       &__arrows {
+           display: flex;
+           gap: 3px;
+       }
+   }
+   .product {
+       position: relative;
+       color: #000;
+       height: 600px;
+       overflow: hidden;
+       &__title {
+          position: absolute;
+          z-index: 1;
+       }
+       &__image {
+           height: 100%;
+           width: auto;
+           object-fit: cover;
+           transition: transform .5s;
+           &:hover {
+              transform: scale(1.2);
+           }
+       }
+       &__price {
+           position: absolute;
+           bottom: 10px;
+       }
+       &__shop {
+           position: absolute;
+           bottom: 10px;
+           left: 60%;
+       }
+       p {
+           @include underlineNotHover;
+       }
+       &:hover p {
+           @include underlineHover;
+       }
+   }
 }
